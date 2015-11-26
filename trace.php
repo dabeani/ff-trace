@@ -1,4 +1,7 @@
-ceroute from Funkfeuer housing to given destination IP (within Funkfeuer network)
+<?php
+
+/*
+1) traceroute from Funkfeuer housing to given destination IP (within Funkfeuer network)
 2) add node information from Funkfeuer Node-Database
 3) try to retrieve and display status and connection information from 
    - EdgeRouter - possible if status-php is installed
@@ -727,4 +730,3 @@ echo "</div>\n";
 echo "</body></html>\n";
 
 ?>
-
