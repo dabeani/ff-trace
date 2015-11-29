@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 1) traceroute from Funkfeuer housing to given destination IP (within Funkfeuer network)
 2) add node information from Funkfeuer Node-Database
@@ -245,7 +246,7 @@ if(isset($_GET["targetip"])) {
 			
 			// check auf korrekten dns-eintrag aus node_db
 			// check gegen node_db hinsichtlich MID/HNA IP-Adresse
-			// ANNAHME: nodename laut DNS stimmt mit nodename laut marvin Ã¼berein (verschobene Nodes werden so nicht gefunden)
+			// ANNAHME: nodename laut DNS stimmt mit nodename laut marvin überein (verschobene Nodes werden so nicht gefunden)
 			// zuerst den device-eintrag raussuchen
 			$mid_hna_string='';
             $dns;
@@ -259,7 +260,7 @@ if(isset($_GET["targetip"])) {
 				} else {
 					$dns_real='<b>'.substr($dns,0,strpos($dns, '.')).'</b>';
 				}
-				// match auf IP, jetzt prÃ¼fen ob diese IP eine secondÃ¤r-addresse (MID) oder ein HNA ist
+				// match auf IP, jetzt prüfen ob diese IP eine secondär-addresse (MID) oder ein HNA ist
 				if ((strpos($device['note'], 'MID:') !== FALSE) || (strpos($device['note'], 'HNA:') !== FALSE)) {
 					$mid_hna_string=' ('.$device['note'].'';
 					// IP vom MID/HNA suchen und andrucken "MID: <NAME>"
@@ -565,7 +566,7 @@ if(isset($_GET["targetip"])) {
 		echo '<td style="color:#aaaaaa"><a href="http://'.$ip.'" target="_blank">'.$ip.'</a>';
 		echo $mid_hna_string;
 		
-		// wenn edgerouter: links fÃ¼r antennen mit portnummern eintragen
+		// wenn edgerouter: links für antennen mit portnummern eintragen
 		if ($airos==2) {
 		   for ($i = 0; $i < count($json_a['devices']); $i++) {
 			 if ( strpos(' '.$json_a['devices'][$i]['fwversion'] ,'EdgeRouter')>0 )	 { continue;  }
